@@ -625,6 +625,12 @@ document.getElementById("continueBtn").onclick = function(){
 
     playClick();
 
+    const music = document.getElementById("birthdayMusic");
+
+    music.volume = 0.25;
+
+    music.play();
+
     document.getElementById("terminalPage").classList.add("hidden");
 
     document.getElementById("birthdayPage").classList.remove("hidden");
