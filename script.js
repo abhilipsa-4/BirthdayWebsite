@@ -35,11 +35,26 @@ Running perfectly.
 
 Compiled with ❤️ by Abhilipsa`;
 
+const typingSound = document.getElementById("typingSound");
+
+// Unlock the audio
+typingSound.volume = 0;
+typingSound.play().then(() => {
+    typingSound.pause();
+    typingSound.currentTime = 0;
+    typingSound.volume = 0.2;
+}).catch(() => {});
+
 function typeTerminal(text, element, speed = 30){
 
     let i = 0;
 
     element.textContent = "";
+
+    typingSound.currentTime = 0;
+    typingSound.volume = 0.2;
+
+    typingSound.play().catch(err => console.log(err));
 
     function type(){
 
@@ -52,6 +67,9 @@ function typeTerminal(text, element, speed = 30){
             setTimeout(type, speed);
 
         }else{
+
+            typingSound.pause();
+            typingSound.currentTime = 0;
 
             document.getElementById("continueBtn").style.display = "block";
 
