@@ -358,6 +358,17 @@ Abhilipsa❤️`,
 
 ];
 
+starData.forEach(star => {
+
+    if (star.image) {
+
+        const img = new Image();
+        img.src = star.image;
+
+    }
+
+});
+
 
 const quizData = [
 
